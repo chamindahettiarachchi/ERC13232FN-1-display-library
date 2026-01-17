@@ -3,6 +3,10 @@
 #include <avr/io.h>
 #include <util/delay.h>
 #include "st7567.h"
+#include <string.h>
+#include <stdio.h>
+int temp = 17;
+char str[20];
 int main(void)
 {
     lcd_init();
@@ -12,11 +16,12 @@ int main(void)
 lcd_string(0, 0, "HELLO");
 lcd_string(0, 1, "Chaminda");
 lcd_string(0, 2, "[\\]^_`");
-lcd_string(0, 3, "0123456789");
-
+sprintf(str,"Temperature = %d",temp);
+lcd_string(0, 3, str);
 
     while (1);
 }
+
 
 
 
