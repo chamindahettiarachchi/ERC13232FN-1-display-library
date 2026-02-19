@@ -1,0 +1,25 @@
+/*
+ * st7567.h
+ *
+ *  Created on: Feb 17, 2026
+ *      Author: chami
+ */
+
+#ifndef INC_ST7567_H_
+#define INC_ST7567_H_
+#include <stdint.h>
+
+void lcd_init(void);
+void lcd_clear(void);
+void lcd_test_fill(void);
+void lcd_char(uint8_t x, uint8_t page, char c);
+void lcd_string(uint8_t x, uint8_t page, const char *s);
+
+
+void lcd_char_A(uint8_t x, uint8_t page);
+void lcd_char(uint8_t x, uint8_t page, char c);
+void lcd_string(uint8_t x, uint8_t page, const char *s);
+
+
+
+#endif /* INC_ST7567_H_ */
