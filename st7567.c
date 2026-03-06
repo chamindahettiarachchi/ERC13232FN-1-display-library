@@ -101,45 +101,6 @@ void lcd_test_fill(void)
     }
 }
 
-/* -------- TEXT -------- */
-
-
-
-/* -------- DRAW LETTER A (6x8) -------- */
-void lcd_char_A(uint8_t x, uint8_t page)
-{
-    const uint8_t A_char[6] =
-    {
-        0x7E, //  ######
-        0x11, // #    #
-        0x11, // #    #
-        0x11, // #    #
-        0x7E, //  ######
-        0x00
-    };
-
-    lcd_set_pos(x, page);
-    for (uint8_t i = 0; i < 6; i++)
-        lcd_data(A_char[i]);
-}
-/* -------- SMALL FONT (ONLY WHAT WE NEED) -------- */
-static const uint8_t font_small[][6] =
-{
-    /* index 0 : space ' ' */
-    {0x00,0x00,0x00,0x00,0x00,0x00},
-
-    /* index 1 : 'H' */
-    {0x7F,0x08,0x08,0x08,0x7F,0x00},
-
-    /* index 2 : 'E' */
-    {0x7F,0x49,0x49,0x49,0x41,0x00},
-
-    /* index 3 : 'L' */
-    {0x7F,0x40,0x40,0x40,0x40,0x00},
-
-    /* index 4 : 'O' */
-    {0x3E,0x41,0x41,0x41,0x3E,0x00},
-};
 
 /* -------- DRAW ONE CHARACTER -------- */
 void lcd_char(uint8_t x, uint8_t page, char c)
@@ -165,6 +126,7 @@ void lcd_string(uint8_t x, uint8_t page, const char *s)
         x += 7;
     }
 }
+
 
 
 
